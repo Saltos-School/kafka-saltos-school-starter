@@ -60,21 +60,21 @@ bin/windows/zookeeper-shell.bat localhost:2181
 
 ```bash
 cd /kafka/bin/windows
-kafka-topics.bat --bootstrap-server localhost:9092 --create --topic hola
+./kafka-topics.bat --bootstrap-server localhost:9092 --create --topic hola
 ```
 
 * A continuación inspeccionar el nuevo tópico con los siguientes commandos
   en la misma carpeta:
 
 ```bash
-kafka-topics.bat --bootstrap-server localhost:9092 --list
-kafka-topics.bat --bootstrap-server localhost:9092 --describe --topic hola
+./kafka-topics.bat --bootstrap-server localhost:9092 --list
+./kafka-topics.bat --bootstrap-server localhost:9092 --describe --topic hola
 ```
 
 * Crear un tópico nuevo con 5 particiones con el commando:
 
 ```bash
-kafka-topics.bat --bootstrap-server localhost:9092 --create --topic hola5 --partitions 5
+./kafka-topics.bat --bootstrap-server localhost:9092 --create --topic hola5 --partitions 5
 ```
 
 > Al inspeccionar este nuevo tópico veremos que tiene particiones de la 0 a la 4
@@ -82,7 +82,7 @@ kafka-topics.bat --bootstrap-server localhost:9092 --create --topic hola5 --part
 * Crear un tópico con 50 particiones con el commando
 
 ```bash
-kafka-topics.bat --bootstrap-server localhost:9092 --create --topic hola50 --partitions 50
+./kafka-topics.bat --bootstrap-server localhost:9092 --create --topic hola50 --partitions 50
 ```
 
 ## Agregar más servidores de Kafka
@@ -150,7 +150,7 @@ bin/windows/kafka-server-start.bat config/server.properties
 
 ```bash
 cd /kafka/bin/windows
-kafka-topics.bat --bootstrap-server localhost:9092 --create --topic hola5bis --partitions 5 --replication-factor 3
+./kafka-topics.bat --bootstrap-server localhost:9092 --create --topic hola5bis --partitions 5 --replication-factor 3
 ```
 
 * Podemos inspeccionar este nuevo tópico para ver las nuevas particiones con sus
@@ -158,7 +158,7 @@ kafka-topics.bat --bootstrap-server localhost:9092 --create --topic hola5bis --p
 
 ```bash
 cd /kafka3/bin/windows
-kafka-topics.bat --bootstrap-server localhost:9095 --describe --topic hola5bis
+./kafka-topics.bat --bootstrap-server localhost:9095 --describe --topic hola5bis
 ```
 
 > Con este comando estamos usando el cliente Kafka desde los archivos del tercer
@@ -171,7 +171,7 @@ kafka-topics.bat --bootstrap-server localhost:9095 --describe --topic hola5bis
 
 ```bash
 cd /kafka/bin/windows
-kafka-console-producer.bat --bootstrap-server localhost:9095 --topic hola5bis
+./kafka-console-producer.bat --bootstrap-server localhost:9095 --topic hola5bis
 ```
 
 > Al ejecutar el producer podremos poner datos en formato texto uno por linea
@@ -183,7 +183,7 @@ kafka-console-producer.bat --bootstrap-server localhost:9095 --topic hola5bis
 
 ```bash
 cd /kafka/bin/windows
-kafka-console-consumer.bat --bootstrap-server localhost:9095 --topic hola5bis
+./kafka-console-consumer.bat --bootstrap-server localhost:9095 --topic hola5bis
 ```
 
 * Este comando no presentará nada porque por defecto los consumidores presentan
@@ -192,7 +192,7 @@ kafka-console-consumer.bat --bootstrap-server localhost:9095 --topic hola5bis
 
 ```bash
 cd /kafka/bin/windows
-kafka-console-consumer.bat --bootstrap-server localhost:9095 --topic hola5bis --from-beginning
+./kafka-console-consumer.bat --bootstrap-server localhost:9095 --topic hola5bis --from-beginning
 ```
 
 > Ahora sí deberíamos ver los datos desde el principio
