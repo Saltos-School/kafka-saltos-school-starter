@@ -13,7 +13,7 @@ public class HolaKafkaCloudProducer {
 
         final Properties props = new Properties();
 
-        props.load(new FileInputStream("src/main/resources/cluster_0.properties"));
+        props.load(new FileInputStream("src/main/resources/cluster_1.properties"));
 
         props.put("client.id", "HolaKafkaCloudProducer");
         props.setProperty("key.serializer", "org.apache.kafka.common.serialization.StringSerializer");

@@ -15,7 +15,7 @@ public class HolaKafkaCloudConsumer {
 
         final Properties props = new Properties();
 
-        props.load(new FileInputStream("src/main/resources/cluster_0.properties"));
+        props.load(new FileInputStream("src/main/resources/cluster_1.properties"));
 
         props.put("client.id", "HolaKafkaCloudConsumer");
         props.put("group.id", "test1");
