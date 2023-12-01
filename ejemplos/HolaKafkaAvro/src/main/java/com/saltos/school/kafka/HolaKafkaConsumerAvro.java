@@ -15,7 +15,7 @@ public class HolaKafkaConsumerAvro {
 
         final Properties props = new Properties();
 
-        props.load(new FileInputStream("src/main/resources/cluster_1.properties"));
+        props.load(new FileInputStream("src/main/resources/cluster_0.properties"));
 
         props.put("client.id", "HolaKafkaConsumerAvro");
         props.put("group.id", "test1");

@@ -74,5 +74,4 @@ public class Usuario {
     return "Usuario [nombre=" + nombre + ", apellido=" + apellido + ", edad=" + edad + "]";
   }
 
-  
 }

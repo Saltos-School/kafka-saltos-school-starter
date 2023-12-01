@@ -3,10 +3,6 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 
-.bloop/
-.metals/
-.idea/
-
 ### IntelliJ IDEA ###
 .idea/modules.xml
 .idea/jarRepositories.xml

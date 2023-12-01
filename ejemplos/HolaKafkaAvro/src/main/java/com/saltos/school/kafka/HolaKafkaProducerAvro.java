@@ -14,7 +14,7 @@ public class HolaKafkaProducerAvro {
 
         final Properties props = new Properties();
 
-        props.load(new FileInputStream("src/main/resources/cluster_1.properties"));
+        props.load(new FileInputStream("src/main/resources/cluster_0.properties"));
 
         props.setProperty("key.serializer", "org.apache.kafka.common.serialization.StringSerializer");
         props.setProperty("value.serializer", "io.confluent.kafka.streams.serdes.avro.ReflectionAvroSerializer");

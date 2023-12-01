@@ -1,4 +1,4 @@
-# Apache Kafka Día 2
+# Apache Kafka Día 3
 
 ## Usar Confluent Cloud
 
