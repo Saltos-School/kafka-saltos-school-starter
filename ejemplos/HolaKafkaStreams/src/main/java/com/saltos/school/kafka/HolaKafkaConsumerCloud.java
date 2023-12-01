@@ -36,6 +36,7 @@ public class HolaKafkaConsumerCloud {
           System.out.println("Topic: " + registro.topic());
           System.out.println("Key: " + registro.key());
           System.out.println("Value: " + registro.value());
+          System.out.println("Headers: " + registro.headers());
           System.out.println("Partition: " + registro.partition());
           System.out.println("Offset: " + registro.offset());
           System.out.println("Timestamp: " + new Date(registro.timestamp()));

@@ -25,7 +25,8 @@ public class HolaKafkaProducerCloud {
         try (Producer<String, String> producer = new KafkaProducer<>(props)) {
             for (int i = 0; true; i++) {
                 Thread.sleep(2000);
-                ProducerRecord<String, String> producerRecord = new ProducerRecord<>("hola", "key_" + i, "Prueba " + i);
+                //Headers headers = List.of(new Header("tiempo", "creado el " + System.currentTimeMillis));
+                ProducerRecord<String, String> producerRecord = new ProducerRecord<>("hola", "key_" + i, "Prueba " + i/* , headers*/);
                 producer.send(producerRecord,
                         (metadata, exception) -> {
                             if (exception != null) {

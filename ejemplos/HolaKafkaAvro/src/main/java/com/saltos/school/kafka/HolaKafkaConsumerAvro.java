@@ -28,7 +28,7 @@ public class HolaKafkaConsumerAvro {
         Duration pollTimeout = Duration.ofSeconds(1);
 
         try (Consumer<String, Usuario> consumer = new KafkaConsumer<>(props)) {
-            consumer.subscribe(List.of("holaavro"));
+            consumer.subscribe(List.of("holapaulavro"));
             while (true) {
                 ConsumerRecords<String, Usuario> registros = consumer.poll(pollTimeout);
                 registros.forEach(registro -> {

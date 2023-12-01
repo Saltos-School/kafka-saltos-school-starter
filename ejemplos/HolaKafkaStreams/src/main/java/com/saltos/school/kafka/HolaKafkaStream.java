@@ -7,6 +7,7 @@ import org.apache.kafka.streams.StreamsBuilder;
 import org.apache.kafka.streams.Topology;
 import org.apache.kafka.streams.kstream.Consumed;
 import org.apache.kafka.streams.kstream.Produced;
+
 import java.util.Properties;
 import java.io.FileInputStream;
 
@@ -22,12 +23,17 @@ public class HolaKafkaStream {
     props.setProperty("key.serializer", "org.apache.kafka.common.serialization.StringSerializer");
     props.setProperty("value.serializer", "org.apache.kafka.common.serialization.StringSerializer");
 
+    // paul@csaltos.com
+
+    //Serde<Usuario> usuarioSerde ...
+    //Serde<Compras> comprasSerde ...
     Serde<String> stringSerde = Serdes.String();
     StreamsBuilder builder = new StreamsBuilder();
     builder
         .stream("hola", Consumed.with(stringSerde, stringSerde))
         .peek((k, v) -> System.out.println("Mensaje nuevo: " + v))
         .mapValues(s -> s.toUpperCase())
+        //.filter(s -> s.length > 20)
         .peek((k, v) -> System.out.println("Guardando mensaje: " + v))
         .to("hola2", Produced.with(stringSerde, stringSerde));
 
@@ -40,5 +46,6 @@ public class HolaKafkaStream {
     Thread.sleep(120000);
 
     kafkaStreams.close();
+
   }
 }
